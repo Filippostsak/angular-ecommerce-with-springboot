@@ -2,7 +2,7 @@
   <div class="section-content section-content-p30">
     <div class="container-fluid">
       <div class="row">
-        <div *ngFor="let tempProducts of products" class="col-md-3">
+        <div *ngFor="let tempProducts of products" class="col-3">
           <div class="product-box">
             <img
               class="img-responsive"
@@ -16,12 +16,15 @@
             <a class="btn primary-btn" href="#">Add to cart</a>
           </div>
         </div>
+        <!-- if products empty then display a message -->
+        <div *ngIf="products.length == 0" class="col-12">
+          <div class="alert alert-danger" role="alert">No products found</div>
+        </div>
       </div>
     </div>
   </div>
-</div>
 
-<!-- <table class="table">
+  <!-- <table class="table">
   <thead class="table-dark">
     <tr>
       <th></th>
@@ -47,3 +50,4 @@
     </tr>
   </tbody>
 </table> -->
+</div>
