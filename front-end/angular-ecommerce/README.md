@@ -7,7 +7,8 @@ Create a class: ProductCategory
 Create new component for menu
 Enhance menu component to read data from product service
 Update product service to call URL on Spring Boot app
-In HTML, replace hard-coded links with menu component
+In HTML, replace hard-coded links with menu component.
+Finally creates the functionallity to search by a keyword for the products
 
 ## 01-section
 
