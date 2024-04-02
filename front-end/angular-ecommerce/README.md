@@ -1,6 +1,28 @@
 # AngularEcommerce
 
-# 00-section 1
+## 02-section
+
+Modify Spring Boot app - Expose entity ids
+Create a class: ProductCategory
+Create new component for menu
+Enhance menu component to read data from product service
+Update product service to call URL on Spring Boot app
+In HTML, replace hard-coded links with menu component
+
+## 01-section
+
+Online Shop Template Integration
+Search for products by category
+•
+Search for products by text box
+• Master / detail view of products
+•
+Pagination support for products
+• Add products to shopping cart (CRUD)
+•
+Shopping cart check out
+
+# 00-section
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.2.
 
