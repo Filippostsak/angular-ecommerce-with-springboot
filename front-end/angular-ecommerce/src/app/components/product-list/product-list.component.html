@@ -1,4 +1,27 @@
-<table class="table">
+<div class="main-content">
+  <div class="section-content section-content-p30">
+    <div class="container-fluid">
+      <div class="row">
+        <div *ngFor="let tempProducts of products" class="col-md-3">
+          <div class="product-box">
+            <img
+              class="img-responsive"
+              src="{{ tempProducts.imageUrl }} "
+              alt="image"
+            />
+            <h1>{{ tempProducts.name }}</h1>
+            <div class="price">
+              {{ tempProducts.unitPrice | currency : "EUR" }}
+            </div>
+            <a class="btn primary-btn" href="#">Add to cart</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- <table class="table">
   <thead class="table-dark">
     <tr>
       <th></th>
@@ -15,7 +38,6 @@
           alt="placeholder-of-image"
           height="50"
         />
-        <!-- <img src="{{ tempProduct.imageUrl }}" height="50" /> -->
       </td>
       <td class="align-middle">{{ tempProduct.name }}</td>
       <td class="align-middle">
@@ -24,4 +46,4 @@
       <td class="align-middle">{{ tempProduct.unitsInStock }}</td>
     </tr>
   </tbody>
-</table>
+</table> -->
