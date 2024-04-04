@@ -4,12 +4,16 @@
       <div class="row">
         <div *ngFor="let tempProducts of products" class="col-3">
           <div class="product-box">
-            <img
-              class="img-responsive"
-              src="{{ tempProducts.imageUrl }} "
-              alt="image"
-            />
+            <a routerLink="/products/{{ tempProducts.id }} ">
+              <img
+                class="img-responsive"
+                src="{{ tempProducts.imageUrl }} "
+                alt="image"
+              />
+            </a>
+
             <h1>{{ tempProducts.name }}</h1>
+
             <div class="price">
               {{ tempProducts.unitPrice | currency : "EUR" }}
             </div>
@@ -17,37 +21,10 @@
           </div>
         </div>
         <!-- if products empty then display a message -->
-        <div *ngIf="products.length == 0" class="col-12">
-          <div class="alert alert-danger" role="alert">No products found</div>
-        </div>
+        @if ( products.length == 0 ) {
+        <div role="alert" class="alert alert-danger">No products found</div>
+        }
       </div>
     </div>
   </div>
-
-  <!-- <table class="table">
-  <thead class="table-dark">
-    <tr>
-      <th></th>
-      <th>Name</th>
-      <th>Price</th>
-      <th>Units in Stock</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let tempProduct of products">
-      <td class="align-middle">
-        <img
-          src="../../../assets/images/products/placeholder.png"
-          alt="placeholder-of-image"
-          height="50"
-        />
-      </td>
-      <td class="align-middle">{{ tempProduct.name }}</td>
-      <td class="align-middle">
-        {{ tempProduct.unitPrice | currency : "EUR" }}
-      </td>
-      <td class="align-middle">{{ tempProduct.unitsInStock }}</td>
-    </tr>
-  </tbody>
-</table> -->
 </div>
