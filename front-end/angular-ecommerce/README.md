@@ -1,5 +1,9 @@
 # AngularEcommerce
 
+## 03-section
+
+Creating the product page and the functionallity with the back end in order to observe the data based on the rest API.
+
 ## 02-section
 
 Modify Spring Boot app - Expose entity ids

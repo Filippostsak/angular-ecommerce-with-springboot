@@ -25,6 +25,37 @@
         <div role="alert" class="alert alert-danger">No products found</div>
         }
       </div>
+      <div class="footer-pagination">
+        <div class="row">
+          <div class="col-md-6"></div>
+          <div class="col-md-6">
+            <div class="row">
+              <div style="padding-left: 30%" class="col-md-9">
+                <ngb-pagination
+                  [collectionSize]="theTotalElements"
+                  [(page)]="thePageNumber"
+                  [pageSize]="thePageSize"
+                  [maxSize]="5"
+                  [boundaryLinks]="true"
+                  (pageChange)="listProducts()"
+                />
+              </div>
+              <div class="col-md-3 mt-2" style="text-align: right">
+                <span class="mr-2"> Size</span>
+                <select
+                  #myPageSelect
+                  (change)="updatePageSize(myPageSelect.value)"
+                >
+                  <option selected="true">5</option>
+                  <option>10</option>
+                  <option>20</option>
+                  <option>50</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>

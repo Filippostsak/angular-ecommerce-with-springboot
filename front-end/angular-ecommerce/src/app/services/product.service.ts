@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, map } from 'rxjs';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators'; // Corrected import statement for `map`
 import { Product } from '../common/product';
 import { ProductCategory } from '../common/product-category';
 
@@ -21,6 +22,16 @@ export class ProductService {
   getProductList(theCategoryId: number): Observable<Product[]> {
     const searchUrl = `${this.baseUrl}/search/findByCategoryId?id=${theCategoryId}`;
     return this.getProducts(searchUrl);
+  }
+
+  getProductListPaginate(
+    thePage: number, // Adjusted the order to match the method's description
+    thePageSize: number,
+    theCategoryId: number
+  ): Observable<GetResponseProducts> {
+    // Corrected return type
+    const searchUrl = `${this.baseUrl}/search/findByCategoryId?id=${theCategoryId}&page=${thePage}&size=${thePageSize}`;
+    return this.httpClient.get<GetResponseProducts>(searchUrl);
   }
 
   searchProducts(theKeyword: string): Observable<Product[]> {
@@ -45,7 +56,14 @@ interface GetResponseProducts {
   _embedded: {
     products: Product[];
   };
+  page: {
+    size: number;
+    totalElements: number;
+    totalPages: number;
+    number: number;
+  };
 }
+
 interface GetResponseProductCategory {
   _embedded: {
     productCategory: ProductCategory[];
