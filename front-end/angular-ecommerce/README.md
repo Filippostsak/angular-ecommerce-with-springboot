@@ -1,5 +1,10 @@
 # AngularEcommerce
 
+## 04-section
+
+Adding pagination to the web page. The back-end doesnt have to be updated because the rest API gives the functionallity out of the box.
+Also, makes the search input to be able to search by keywords
+
 ## 03-section
 
 Creating the product page and the functionallity with the back end in order to observe the data based on the rest API.
